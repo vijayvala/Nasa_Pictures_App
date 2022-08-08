@@ -9,8 +9,9 @@ import com.bumptech.glide.Glide
 import com.obvious.vijay.nasapicturesapp.R
 import com.obvious.vijay.nasapicturesapp.databinding.FragmentDetailPagerBinding
 import com.obvious.vijay.nasapicturesapp.model.NasaModel
+import com.obvious.vijay.nasapicturesapp.ui.listener.OnItemClick
 
-class PhotoDetailPagerFragment: Fragment() {
+class PhotoDetailPagerFragment: Fragment()  {
 
     private var _binding: FragmentDetailPagerBinding? = null
 
@@ -26,12 +27,26 @@ class PhotoDetailPagerFragment: Fragment() {
         return binding.root
 
     }
+    fun showHide(view:View) {
+        view.visibility = if (view.visibility == View.VISIBLE){
+            binding.tvtap.setText("Tap Here For More Info...")
+            View.INVISIBLE
 
+        } else{
+            binding.tvtap.setText("Tap Here For Less Info...")
+            View.VISIBLE
+        }
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val data = arguments?.getParcelable<NasaModel>("data")
+        binding.nasamodel=data
 
-//binding.buttonSecond.setText(arguments?.getParcelable<NasaModel>("DATA")?.title)
-        val media = arguments?.get("hdurl")
+binding.tvtap.setOnClickListener {
+    showHide(binding.scrollview)
+
+}
+        val media = data?.hdurl
         if (media !== null) {
             Glide.with(requireActivity())
                 .load(media)
@@ -54,7 +69,8 @@ class PhotoDetailPagerFragment: Fragment() {
 
             // Store the movie data in a Bundle object
             val args = Bundle()
-            args.putString("hdurl", data.hdurl)
+            args.putParcelable("data",data)
+
 
 
             // Create a new MovieFragment and set the Bundle as the arguments
@@ -64,4 +80,6 @@ class PhotoDetailPagerFragment: Fragment() {
             return fragment
         }
     }
+
+
 }
