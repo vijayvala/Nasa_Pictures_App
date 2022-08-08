@@ -1,4 +1,4 @@
-package com.obvious.vijay.nasapicturesapp.view
+package com.obvious.vijay.nasapicturesapp.ui
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -28,10 +28,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

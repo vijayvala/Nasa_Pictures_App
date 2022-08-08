@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/Users/vijay/AndroidStudioProjects/NasaPicturesApp/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/vijay/AndroidStudioProjects/NasaPicturesApp/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/vijay/AndroidStudioProjects/NasaPicturesApp/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/Users/vijay/AndroidStudioProjects/NasaPicturesApp/app/src/main/res/layout/photo_detail_fragment.xml" value="0.11197916666666667" />
+        <entry key="..\:/Users/vijay/AndroidStudioProjects/NasaPicturesApp/app/src/main/res/layout/photo_grid_fragment.xml" value="0.11197916666666667" />
+        <entry key="..\:/Users/vijay/AndroidStudioProjects/NasaPicturesApp/app/src/main/res/layout/photo_layout.xml" value="0.11197916666666667" />
       </map>
     </option>
   </component>

@@ -1,4 +1,4 @@
-package com.obvious.vijay.nasapicturesapp.view
+package com.obvious.vijay.nasapicturesapp.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -16,6 +16,6 @@ class SplashActivity : AppCompatActivity() {
             val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
             this@SplashActivity.startActivity(mainIntent)
             this@SplashActivity.finish()
-        }, 5000)
+        }, 3000)
     }
 }
