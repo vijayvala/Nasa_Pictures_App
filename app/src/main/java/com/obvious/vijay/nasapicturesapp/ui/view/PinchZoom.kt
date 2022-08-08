@@ -1,4 +1,4 @@
-package com.obvious.vijay.nasapicturesapp.ui
+package com.obvious.vijay.nasapicturesapp.ui.view
 
 import android.content.Context
 import android.graphics.Matrix

@@ -1,12 +1,10 @@
-package com.obvious.vijay.nasapicturesapp.ui
+package com.obvious.vijay.nasapicturesapp.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.gson.GsonBuilder
@@ -54,6 +52,7 @@ class PhotoGridFragment : Fragment(),OnItemClick {
         val jsonString = Utils.getJsonDataFromAsset(requireActivity().applicationContext, "data.json")
         jsonString?.let {
             val dataList=GsonBuilder().create().fromJson(it,Array<NasaModel>::class.java)
+            dataList.sortByDescending { it.date }
             photoAdapter.setDataList(dataList)
         }
 
@@ -63,8 +62,12 @@ class PhotoGridFragment : Fragment(),OnItemClick {
 //        }
     }
 
-    override fun <T> onClick(data: T) {
-          findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundleOf("DATA" to  (data as NasaModel) ))
+    override fun <T> onClick(data: T,position: Int) {
+        val args = Bundle()
+        args.putParcelableArray("DATA", (data as Array<NasaModel>))
+        args.putInt("position", position)
+
+          findNavController().navigate(R.id.action_GridFragment_to_DetailFragment, args )
     }
 
     /* override fun onDestroyView() {

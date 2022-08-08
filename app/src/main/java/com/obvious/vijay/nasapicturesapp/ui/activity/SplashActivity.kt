@@ -1,4 +1,4 @@
-package com.obvious.vijay.nasapicturesapp.ui
+package com.obvious.vijay.nasapicturesapp.ui.activity
 
 import android.content.Intent
 import android.os.Bundle

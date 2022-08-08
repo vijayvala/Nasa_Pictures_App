@@ -1,4 +1,4 @@
-package com.obvious.vijay.nasapicturesapp.ui
+package com.obvious.vijay.nasapicturesapp.ui.activity
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar

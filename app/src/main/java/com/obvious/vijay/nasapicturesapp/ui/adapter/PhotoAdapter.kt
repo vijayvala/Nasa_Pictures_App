@@ -26,12 +26,12 @@ class PhotoAdapter(val context: Context,val onItemClick: OnItemClick) : Recycler
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var image: ImageView
         var title: TextView
-        var desc: TextView
+
 
         init {
             image = itemView.findViewById(R.id.image)
             title = itemView.findViewById(R.id.title)
-            desc = itemView.findViewById(R.id.desc)
+
         }
 
     }
@@ -55,7 +55,7 @@ class PhotoAdapter(val context: Context,val onItemClick: OnItemClick) : Recycler
             holder.image.setImageResource(R.drawable.ic_launcher_background)
         }
         holder.itemView.setOnClickListener {
-            onItemClick.onClick(data)
+            onItemClick.onClick(dataList,position)
         }
        // holder.desc.text = data.desc
 
